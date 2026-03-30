@@ -33,7 +33,7 @@ and **SPA routing** — without a mandatory build step.
 | Repository | Description | Links |
 |:---:|:---|:---:|
 | **[bQuery](https://github.com/bQuery/bQuery)** | Core library — DOM manipulation, reactivity, components, motion, routing, and more | [Docs](https://bquery.flausch-code.de/) · [npm](https://www.npmjs.com/package/@bquery/bquery) |
-| **[ui](https://github.com/bQuery/ui)** | UI component showcase built with bQuery | [Live Demo](https://bquery.github.io/ui/) |
+| **[ui](https://github.com/bQuery/ui)** | UI component showcase built with bQuery | [Docs](https://bquery.github.io/ui/) |
 
 ---
 

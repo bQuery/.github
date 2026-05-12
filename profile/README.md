@@ -1,25 +1,23 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/bQuery/bQuery/refs/heads/main/assets/bquerry-logo.svg" height="120rem" width="auto" />
+<img src="https://raw.githubusercontent.com/bQuery/bQuery/main/assets/bquerry-logo.svg" alt="bQuery.js" height="80" /><br/><br/>
 
-# bQuery
+# bQuery.js
 
-**The jQuery for the Modern Web Platform.**
+**The full-stack web framework that speaks jQuery.**
 
-[![npm version](https://img.shields.io/npm/v/@bquery/bquery?style=flat-square&color=CB3837&logo=npm)](https://www.npmjs.com/package/@bquery/bquery)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-first-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Zero Build](https://img.shields.io/badge/Zero-Build-8B5CF6?style=flat-square)](#)
-[![GitHub Org](https://img.shields.io/badge/GitHub-bQuery-181717?style=flat-square&logo=github)](https://github.com/bQuery)
+<a href="https://www.npmjs.com/package/@bquery/bquery"><img src="https://img.shields.io/npm/v/@bquery/bquery?style=flat&logo=npm" alt="npm version"/></a>&nbsp;
+<a href="https://bundlephobia.com/package/@bquery/bquery"><img src="https://img.shields.io/bundlephobia/minzip/@bquery/bquery?style=flat" alt="Bundle Size"/></a>&nbsp;
+<a href="https://github.com/bQuery/bQuery/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/bquery/bquery?style=flat" alt="License"/></a><br/>
+<a href="https://github.com/bQuery/bQuery/stargazers"><img src="https://img.shields.io/github/stars/bquery/bquery?style=flat&logo=github" alt="Stars"/></a>&nbsp;
+<a href="https://github.com/bQuery/bQuery/issues"><img src="https://img.shields.io/github/issues/bquery/bquery?style=flat&logo=github" alt="Issues"/></a>&nbsp;
+<a href="https://www.codefactor.io/repository/github/bquery/bquery"><img src="https://www.codefactor.io/repository/github/bquery/bquery/badge" alt="CodeFactor"/></a>&nbsp;
+<a href="https://www.jsdelivr.com/package/npm/@bquery/bquery"><img src="https://data.jsdelivr.com/v1/package/npm/@bquery/bquery/badge" alt="jsDelivr"/></a>
 
 ---
 
-**Slim · Modular · Reactive · Secure · Zero-build**
-
-A TypeScript-first library that combines jQuery's beloved DOM workflow
-with modern features like **signals**, **Web Components**, **motion utilities**,
-**SPA routing**, **forms**, **i18n**, **accessibility**, **drag & drop**, **media signals**,
-**SSR**, and **20 dedicated entry points** — without a mandatory build step.
+*Batteries-included TypeScript framework for the modern web — signals, SSR, Web Components,
+routing, and more — with a jQuery-inspired API and zero mandatory build step.*
 
 [📖 Documentation](https://bquery.flausch-code.de/) •
 [🧩 UI Components](https://bquery.github.io/ui/) •
@@ -28,6 +26,8 @@ with modern features like **signals**, **Web Components**, **motion utilities**,
 </div>
 
 ---
+
+> **New in 1.11.0:** Runtime-agnostic SSR now adds DOM-free fallback rendering, `renderToStringAsync()`, `renderToStream()`, `renderToResponse()`, runtime adapters, hydration strategies, store snapshots, and resumability hooks, alongside the new `@bquery/bquery/server` entry point for dependency-free backend routing and WebSocket sessions.
 
 ## 🏗️ Projects
 
@@ -38,14 +38,16 @@ with modern features like **signals**, **Web Components**, **motion utilities**,
 
 ---
 
-## ✨ Why bQuery?
+## ✨ Highlights
 
-- 🌳 **Tree-shakeable** — import only what you need from 20 dedicated entry points
+- 🌐 **Full-stack by default** — signals, SSR, routing, server middleware, Web Components, and 15+ modules ship together
+- 🌳 **Tree-shakeable** — import only what you need from 21 dedicated entry points
 - 🔷 **TypeScript-first** — full types and strong IDE support
 - 📦 **Modular** — core stays small, extras are opt-in
-- 🔒 **Security-focused** — DOM writes are sanitized by default; Trusted Types supported
-- ⚡ **Zero-build** — works straight from a CDN with ES Modules
+- 🔒 **Security-focused** — DOM writes are sanitized by default; Trusted Types and CSP helpers built in
+- ⚡ **Zero-build** — works straight from a CDN with ES Modules, UMD, or IIFE builds
 - 🧪 **Storybook-ready** — default components with dedicated story template helpers
+- 🔁 **Reactive data across the stack** — fetch composables, HTTP clients, WebSocket / SSE, and REST helpers plug directly into signals
 
 ---
 
@@ -53,38 +55,49 @@ with modern features like **signals**, **Web Components**, **motion utilities**,
 
 ```text
 @bquery/bquery
-├── core/                    ─  Selectors, DOM manipulation, events, traversal, utilities
-├── reactive/                ─  Signals, computed, effects, async data, fetch composables
-├── component/               ─  Web Components with scoped reactivity & Shadow DOM control
-├── storybook/               ─  Safe story template helpers with boolean-attribute shorthand
-├── motion/                  ─  Transitions, FLIP, morphing, parallax, typewriter, springs
-├── security/                ─  Sanitizer, CSP, Trusted Types, trusted fragments
-├── platform/                ─  Storage, cache, cookies, page meta, announcers, config
-├── router/                  ─  SPA routing, constrained params, guards, <bq-link>
-├── store/                   ─  State management, persistence, migrations, action hooks
-├── view/                    ─  Declarative DOM bindings (bq-text, bq-for, bq-if…)
-├── forms/                   ─  Reactive form state with sync/async validation
-├── i18n/                    ─  Reactive locales, interpolation, pluralization, formatting
-├── a11y/                    ─  Focus traps, live regions, roving tabindex, skip links
-├── dnd/                     ─  Draggable elements, droppable zones, sortable lists
-├── media/                   ─  Reactive viewport, network, battery, geolocation signals
-├── plugin/                  ─  Global plugin registration for directives & components
-├── devtools/                ─  Runtime inspection for signals, stores, components
-├── testing/                 ─  Component mounting, mock helpers, async test utilities
-└── ssr/                     ─  Server-side rendering, hydration, store serialization
+├── core/          ─  Selectors, DOM manipulation, events, traversal, utilities
+├── reactive/      ─  Signals, computed, effects, async data, fetch composables, HTTP, WS/SSE
+├── concurrency/   ─  Zero-build worker tasks, RPC, pools, collection helpers, pipelines (Experimental)
+├── component/     ─  Web Components with scoped reactivity & configurable Shadow DOM
+├── storybook/     ─  Safe story template helpers with boolean-attribute shorthand
+├── motion/        ─  View transitions, FLIP, morphing, parallax, typewriter, springs, timelines
+├── security/      ─  HTML sanitization, Trusted Types, CSP helpers, trusted fragments
+├── platform/      ─  Storage, cache, cookies, page meta, announcers, notifications, config
+├── router/        ─  SPA routing, constrained params, redirects, guards, <bq-link>
+├── store/         ─  Signal-based state management, persistence, migrations, action hooks
+├── view/          ─  Declarative DOM bindings (bq-text, bq-for, bq-if, bq-aria…)
+├── forms/         ─  Reactive form state with sync/async validation and submit handling
+├── i18n/          ─  Reactive locales, interpolation, pluralization, lazy loading, Intl formatting
+├── a11y/          ─  Focus traps, live regions, roving tabindex, skip links, audits
+├── dnd/           ─  Draggable elements, droppable zones, sortable lists
+├── media/         ─  Reactive viewport, network, battery, geolocation, clipboard, DOM observers
+├── plugin/        ─  Global plugin registration for custom directives & Web Components
+├── devtools/      ─  Runtime inspection for signals, stores, components, timelines
+├── testing/       ─  Component mounting, mock helpers, async test utilities
+├── ssr/           ─  Runtime-agnostic SSR (Node ≥ 24, Deno, Bun), streaming, hydration (Experimental)
+└── server/        ─  Backend routing, middleware, safe response helpers, WebSocket sessions (Experimental)
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### Install via npm
+### Install via npm / bun / pnpm
 
 ```bash
+# npm
 npm install @bquery/bquery
+
+# bun
+bun add @bquery/bquery
+
+# pnpm
+pnpm add @bquery/bquery
 ```
 
 ### Or use directly from CDN (zero-build)
+
+#### ES Modules (recommended)
 
 ```html
 <script type="module">
@@ -92,6 +105,16 @@ npm install @bquery/bquery
 
   const count = signal(0);
   $('#counter').text(`Count: ${count.value}`);
+</script>
+```
+
+#### UMD (global variable)
+
+```html
+<script src="https://unpkg.com/@bquery/bquery@1/dist/full.umd.js"></script>
+<script>
+  const { $, signal } = bQuery;
+  const count = signal(0);
 </script>
 ```
 
@@ -104,53 +127,64 @@ npm install @bquery/bquery
 ```ts
 import { $, $$ } from '@bquery/bquery/core';
 
-// jQuery-style selectors & chaining
-$('#box')
-  .addClass('active')
-  .css({ opacity: '0.8' })
-  .attr('data-state', 'ready');
+$('#save').on('click', (event) => {
+  console.log('Saved', event.type);
+});
 
 // Event delegation for dynamic content
 $('#list').delegate('click', '.item', (event, target) => {
-  console.log('Clicked:', target.textContent);
+  console.log('Item clicked', target.textContent);
 });
 
-// New in 1.7.0: jQuery-parity helpers
-const pos = $('#box').position();
-const width = $('#box').outerWidth(true);
+// jQuery-style chaining
+$('#box').addClass('active').css({ opacity: '0.8' }).attr('data-state', 'ready');
+
+$$('.container').find('.item').addClass('found');
 ```
 
 ### Reactivity — Signals
 
 ```ts
-import { signal, computed, effect } from '@bquery/bquery/reactive';
+import { signal, computed, effect, watch, watchDebounce, batch, linkedSignal } from '@bquery/bquery/reactive';
 
 const count = signal(0);
 const doubled = computed(() => count.value * 2);
 
 effect(() => console.log(`Count: ${count.value}, Doubled: ${doubled.value}`));
 
-count.value++; // → "Count: 1, Doubled: 2"
+watchDebounce(count, (newVal) => console.log('Debounced:', newVal), 150);
+
+batch(() => { count.value++; count.value++; });
+
+const first = signal('Ada');
+const last = signal('Lovelace');
+const fullName = linkedSignal(
+  () => `${first.value} ${last.value}`,
+  (next) => { [first.value, last.value] = next.split(' '); }
+);
 ```
 
 ### Components — Web Components
 
 ```ts
-import { component } from '@bquery/bquery/component';
+import { component, safeHtml, bool } from '@bquery/bquery/component';
+import { sanitizeHtml, trusted } from '@bquery/bquery/security';
+
+const badge = trusted(sanitizeHtml('<span class="badge">Active</span>'));
 
 component('user-card', {
   props: {
     username: { type: String, required: true },
+    age: { type: Number, validator: (v) => v >= 0 && v <= 150 },
   },
-  // New in 1.7.0: Shadow DOM mode control
-  shadow: 'open',
-  // New in 1.7.0: attribute observation & lifecycle hooks
-  observeAttributes: ['username'],
-  onAttributeChanged(name, oldVal, newVal) {
-    console.log(`${name} changed: ${oldVal} → ${newVal}`);
-  },
-  render({ props }) {
-    return `<div class="card"><h2>${props.username}</h2></div>`;
+  state: { count: 0 },
+  render({ props, state }) {
+    return safeHtml`
+      <button class="user-card" ${bool('disabled', state.count > 3)}>
+        ${badge}
+        <span>Hello ${props.username}</span>
+      </button>
+    `;
   },
 });
 ```
@@ -158,111 +192,150 @@ component('user-card', {
 ### Router — SPA Navigation
 
 ```ts
-import { createRouter, navigate, useRoute } from '@bquery/bquery/router';
+import { createRouter, navigate, currentRoute } from '@bquery/bquery/router';
+import { effect } from '@bquery/bquery/reactive';
 
 const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomePage },
-    // New in 1.7.0: regex-constrained params
-    { path: '/user/:id(\\d+)', name: 'user', component: UserPage },
-    // New in 1.7.0: redirectTo
+    { path: '/user/:id', name: 'user', component: UserPage },
     { path: '/old-path', redirectTo: '/new-path' },
     { path: '*', component: NotFound },
   ],
 });
 
-// New in 1.7.0: fine-grained route signals
-const route = useRoute();
+router.beforeEach(async (to) => {
+  if (to.path === '/admin' && !isAuthenticated()) {
+    await navigate('/login');
+    return false;
+  }
+});
+
+effect(() => console.log('Current path:', currentRoute.value.path));
 ```
 
 ### Store — State Management
 
 ```ts
-import { createStore, createPersistedStore } from '@bquery/bquery/store';
+import { createStore, createPersistedStore, defineStore, watchStore } from '@bquery/bquery/store';
 
 const counterStore = createStore({
   id: 'counter',
   state: () => ({ count: 0 }),
-  actions: {
-    increment() { this.count++; },
-  },
+  getters: { doubled: (state) => state.count * 2 },
+  actions: { increment() { this.count++; } },
 });
 
-// New in 1.7.0: action hooks
-counterStore.$onAction(({ name, args, after }) => {
-  after(() => console.log(`${name} completed`));
+const useCounter = defineStore('counter', {
+  state: () => ({ count: 0 }),
+  actions: { increment() { this.count++; } },
 });
 
-// New in 1.7.0: expanded persistence options
 const settingsStore = createPersistedStore({
   id: 'settings',
-  state: () => ({ theme: 'dark' }),
-  key: 'app-settings',
-  version: 2,
-  migrate: (state, version) => ({ ...state, migrated: true }),
+  state: () => ({ theme: 'dark', language: 'en' }),
 });
 ```
 
 ### Motion — Animations
 
 ```ts
-import { animate, morphElement, parallax, typewriter } from '@bquery/bquery/motion';
+import { animate, spring, transition, keyframePresets } from '@bquery/bquery/motion';
+
+await transition({
+  update: () => { $('#content').text('Updated'); },
+  classes: ['page-transition'],
+  skipOnReducedMotion: true,
+});
 
 await animate(card, {
-  keyframes: [{ opacity: 0 }, { opacity: 1 }],
-  options: { duration: 300 },
+  keyframes: keyframePresets.pop(),
+  options: { duration: 240, easing: 'ease-out' },
 });
 
-// New in 1.7.0
-morphElement(source, target, { duration: 500 });
-parallax('#bg', { speed: 0.5 });
-typewriter('#text', 'Hello, world!', { speed: 50 });
+const x = spring(0, { stiffness: 120, damping: 14 });
+x.onChange((value) => { element.style.transform = `translateX(${value}px)`; });
+await x.to(100);
 ```
 
-### View — Declarative Bindings
-
-```html
-<p bq-text="count"></p>
-<button bq-on:click="increment">+1</button>
-<ul>
-  <li bq-for="item in items" bq-text="item"></li>
-</ul>
-<input bq-model="count" type="number" />
-<div bq-if="count > 5">Count is high!</div>
-```
+### SSR & Server (New in 1.11.0)
 
 ```ts
-import { mount } from '@bquery/bquery/view';
-import { signal } from '@bquery/bquery/reactive';
+import { renderToString, renderToResponse, createSSRContext } from '@bquery/bquery/ssr';
+import { createServer } from '@bquery/bquery/server';
 
-const count = signal(0);
-const items = signal(['Apple', 'Banana', 'Cherry']);
+// Server-side rendering (Node ≥ 24, Deno, Bun)
+const ctx = createSSRContext({ request: new Request('http://localhost/') });
+ctx.head.add({ title: 'Home' });
+ctx.assets.module('/app.js');
+const response = await renderToResponse(
+  '<html><head></head><body><p bq-text="label"></p></body></html>',
+  { label: 'Hello' },
+  { context: ctx, etag: true }
+);
 
-mount('#app', {
-  count,
-  items,
-  increment: () => count.value++,
-});
+// Express-inspired backend routing
+const app = createServer();
+app.get('/hello/:name', (ctx) => ctx.json({ name: ctx.params.name }));
 ```
 
-### New in 1.7.0 — First-class Module Entry Points
+### All Entry Points
 
 ```ts
-// All new dedicated entry points available since 1.7.0
+import { $, $$ } from '@bquery/bquery/core';
+import { signal, computed, effect, useFetch, useWebSocket } from '@bquery/bquery/reactive';
+import { runTask, createRpcWorker, createTaskPool } from '@bquery/bquery/concurrency';
+import { component, defineComponent, registerDefaultComponents } from '@bquery/bquery/component';
+import { storyHtml, when } from '@bquery/bquery/storybook';
+import { animate, spring, transition } from '@bquery/bquery/motion';
+import { sanitize, sanitizeHtml, trusted } from '@bquery/bquery/security';
+import { storage, useCookie, definePageMeta, useAnnouncer } from '@bquery/bquery/platform';
+import { createRouter, navigate } from '@bquery/bquery/router';
+import { createStore, defineStore } from '@bquery/bquery/store';
+import { mount, createTemplate } from '@bquery/bquery/view';
 import { createForm, required, email } from '@bquery/bquery/forms';
 import { createI18n } from '@bquery/bquery/i18n';
 import { trapFocus, rovingTabIndex } from '@bquery/bquery/a11y';
 import { draggable, droppable, sortable } from '@bquery/bquery/dnd';
-import { mediaQuery, useViewport, clipboard } from '@bquery/bquery/media';
+import { mediaQuery, useViewport, useIntersectionObserver } from '@bquery/bquery/media';
 import { use } from '@bquery/bquery/plugin';
 import { enableDevtools, inspectSignals } from '@bquery/bquery/devtools';
 import { renderComponent, fireEvent, waitFor } from '@bquery/bquery/testing';
 import { renderToString, hydrateMount } from '@bquery/bquery/ssr';
+import { createServer } from '@bquery/bquery/server';
 ```
 
 ---
 
-## 🌐 Browser Support
+## 📋 Modules at a Glance
+
+| Module | Status | Description |
+|---|---|---|
+| **Core** | Stable | Selectors, DOM manipulation, events, traversal, and typed utilities |
+| **Reactive** | Stable | Signals, computed, effects, async data, HTTP clients, polling, pagination, WebSocket / SSE |
+| **Concurrency** | Experimental | Zero-build worker tasks, RPC helpers, worker pools, collection helpers, fluent pipelines |
+| **Component** | Stable | Typed Web Components with scoped reactivity and configurable Shadow DOM |
+| **Storybook** | Beta | Safe story template helpers with boolean-attribute shorthand |
+| **Motion** | Stable | View transitions, FLIP, morphing, parallax, typewriter, springs, and timelines |
+| **Security** | Stable | HTML sanitization, Trusted Types, CSP helpers, and trusted fragment composition |
+| **Platform** | Stable | Storage, cache, cookies, page metadata, announcers, and shared runtime config |
+| **Router** | Stable | SPA routing, constrained params, redirects, guards, `useRoute()`, and `<bq-link>` |
+| **Store** | Stable | Signal-based state management, persistence, migrations, and action hooks |
+| **View** | Beta | Declarative DOM bindings with `bq-*` directives for content, classes, forms, errors, ARIA |
+| **Forms** | Beta | Reactive form state with sync/async validation and submit handling |
+| **i18n** | Beta | Reactive locales, interpolation, pluralization, lazy loading, and Intl formatting |
+| **A11y** | Beta | Focus traps, live-region announcements, roving tabindex, skip links, and audits |
+| **DnD** | Beta | Draggable elements, droppable zones, and sortable lists |
+| **Media** | Beta | Reactive browser/device signals for viewport, network, battery, geolocation, clipboard |
+| **Plugin** | Beta | Global plugin registration for custom directives and Web Components |
+| **Devtools** | Beta | Runtime inspection helpers for signals, stores, components, and timelines |
+| **Testing** | Beta | Component mounting, mock signal/router helpers, and async test utilities |
+| **SSR** | Experimental | Runtime-agnostic SSR (Node ≥ 24, Deno, Bun), streaming, hydration islands |
+| **Server** | Experimental | Express-inspired backend routing, middleware, safe response helpers, WebSocket sessions |
+
+---
+
+## 🌐 Browser & Runtime Support
 
 | Browser | Version | Support |
 |---------|---------|---------|
@@ -270,6 +343,10 @@ import { renderToString, hydrateMount } from '@bquery/bquery/ssr';
 | Firefox | 90+     | ✅ Full |
 | Safari  | 15+     | ✅ Full |
 | Edge    | 90+     | ✅ Full |
+
+> **No IE support** by design.
+>
+> Server-side runtimes: **Node.js ≥ 24**, **Bun ≥ 1.3.13**, and **Deno 2** are supported for SSR and server modules.
 
 ---
 
@@ -279,6 +356,15 @@ We welcome contributions! Check out the individual repos for guidelines:
 
 - [bQuery Core](https://github.com/bQuery/bQuery)
 - [bQuery UI](https://github.com/bQuery/ui)
+
+---
+
+## 🤖 AI Agent Support
+
+This project provides dedicated context files for AI coding agents:
+
+- **[AGENT.md](https://github.com/bQuery/bQuery/blob/main/AGENT.md)** — Architecture, module API reference, coding conventions, common tasks
+- **[llms.txt](https://github.com/bQuery/bQuery/blob/main/llms.txt)** — Compact LLM-optimized project summary
 
 ---
 

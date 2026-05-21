@@ -19,7 +19,7 @@
 *Batteries-included TypeScript framework for the modern web — signals, SSR, Web Components,
 routing, and more — with a jQuery-inspired API and zero mandatory build step.*
 
-[📖 Documentation](https://bquery.flausch-code.de/) •
+[📖 Documentation](https://bquery.js.org/) •
 [🧩 UI Components](https://bquery.github.io/ui/) •
 [📦 npm](https://www.npmjs.com/package/@bquery/bquery)
 
@@ -33,7 +33,7 @@ routing, and more — with a jQuery-inspired API and zero mandatory build step.*
 
 | Repository | Description | Links |
 |:---:|:---|:---:|
-| **[bQuery](https://github.com/bQuery/bQuery)** | Core library — DOM manipulation, reactivity, components, motion, routing, and more | [Docs](https://bquery.flausch-code.de/) · [npm](https://www.npmjs.com/package/@bquery/bquery) |
+| **[bQuery](https://github.com/bQuery/bQuery)** | Core library — DOM manipulation, reactivity, components, motion, routing, and more | [Docs](https://bquery.js.org/) · [npm](https://www.npmjs.com/package/@bquery/bquery) |
 | **[ui](https://github.com/bQuery/ui)** | UI component showcase built with bQuery | [Docs](https://bquery.github.io/ui/) |
 
 ---
@@ -378,6 +378,6 @@ All projects in this organization are licensed under the **MIT License**.
 
 Made with ❤️ by the **bQuery** team
 
-[Website](https://bquery.flausch-code.de/) · [GitHub](https://github.com/bQuery) · [npm](https://www.npmjs.com/package/@bquery/bquery)
+[Website](https://bquery.js.org/) · [GitHub](https://github.com/bQuery) · [npm](https://www.npmjs.com/package/@bquery/bquery)
 
 </div>
